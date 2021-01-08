@@ -7,12 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore;
 
 namespace API.Controllers
 {
-        [ApiController]
-        [Route("api/[controller]")]
-        public class UsersController : ControllerBase
+        public class UsersController : BaseApiController
         {
 
             private readonly DataContext _context;
