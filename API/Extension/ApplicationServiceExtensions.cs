@@ -17,7 +17,9 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
-
+using API.Interfaces;
+using AutoMapper;
+using API.Helpers;
 
 namespace API.Extension
 {
@@ -27,6 +29,8 @@ namespace API.Extension
         {
 
              services.AddScoped<ITokenService, TokenService>();
+             services.AddScoped<IUserRepository, UserRepository>();
+             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options =>
             {
 
